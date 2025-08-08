@@ -5,12 +5,12 @@ phases:
     runtime-versions:
       python: 3.10
     commands:
-      - echo "Installing AWS CLI..."
+      - echo "Installing dependencies (if any)..."
       - pip install --upgrade awscli
   build:
     commands:
       - echo "Zipping Lambda function..."
       - zip function.zip lambda_functions.py
-      - echo "Deploying to Lambda..."
-      - aws lambda update-function-code --function-name TestFunction --zip-file fileb://function.zip
-
+artifacts:
+  files:
+    - function.zip
