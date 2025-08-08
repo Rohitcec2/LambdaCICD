@@ -12,5 +12,5 @@ phases:
       - echo "Zipping Lambda function..."
       - zip function.zip lambda_functions.py
       - echo "Deploying to Lambda..."
-      - aws lambda update-function-code --function-name YOUR_LAMBDA_FUNCTION_NAME --zip-file fileb://function.zip
+      - aws lambda update-function-code --function-name TestFunction --zip-file fileb://function.zip
 
