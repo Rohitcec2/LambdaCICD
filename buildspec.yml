@@ -7,10 +7,14 @@ phases:
     commands:
       - echo "Installing dependencies (if any)..."
       - pip install --upgrade awscli
+
   build:
     commands:
-      - echo "Zipping Lambda function..."
-      - zip function.zip lambda_functions.py
+      - echo "Preparing Lambda function files..."
+      # If you have dependencies, install them into the current directory
+      # pip install -r requirements.txt -t .
+      - echo "Build phase completed"
+
 artifacts:
   files:
-    - function.zip
+    - lambda_functions.py
